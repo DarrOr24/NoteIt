@@ -16,7 +16,8 @@
     }
 
     .note-index-header {
-        grid-template-columns: 90px 60px auto; 
+        margin-block-start: 1em;
+        grid-template-columns: 50px 60px auto; 
     } 
 
     .note-list h2 {
@@ -30,7 +31,7 @@
     }
 
     .side-menu .hamburger {
-        opacity: 0;
+        display: none;
     }
 
 }
