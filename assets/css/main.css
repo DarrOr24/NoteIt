@@ -49,24 +49,10 @@
 /* Keeper Setup */
 
 @import './apps/note/setup/NoteMq.css';
-@import './apps/mail/setup/MailMq.css';
 
 
 
 
-/* Email */
-@import './apps/mail/views/MailIndex.css';
-
-/* Email Cmps*/
-
-@import './apps/mail/cmps/MailFilter.css';
-@import './apps/mail/cmps/MailList.css';
-@import './apps/mail/cmps/MailPreview.css';
-@import './apps/mail/cmps/MailDetails.css';
-@import './apps/mail/cmps/MailSideMenu.css';
-@import './apps/mail/cmps/MailCompose.css';
-@import './apps/mail/cmps/ActionBtnsMail.css';
-@import './apps/mail/cmps/darr.css';
 
 
 

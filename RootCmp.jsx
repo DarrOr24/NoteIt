@@ -8,10 +8,6 @@ import { Home } from "./views/Home.jsx"
 import { UserMsg } from "./cmps/UserMsg.jsx"
 import { eventBusService } from "./services/event-bus.service.js"
 
-import { MailIndex } from "./apps/mail/views/MailIndex.jsx"
-import { MailList } from "./apps/mail/cmps/MailList.jsx"
-import { MailDetails } from "./apps/mail/cmps/MailDetails.jsx"
-
 import { NoteIndex } from "./apps/note/views/NoteIndex.jsx"
 import { AddNote } from "./apps/note/cmps/AddNote.jsx"
 import { NoteEdit2 } from "./apps/note/cmps/NoteEdit2.jsx"
@@ -22,7 +18,7 @@ import { NoteList } from "./apps/note/cmps/NoteList.jsx"
 
 
 export function App() {
-   
+
     return (
         <Router>
             <section className="app">
@@ -31,17 +27,11 @@ export function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
 
-                    <Route path="/mail" element={<MailIndex />}>
-                        <Route path="" element={<Navigate to="inbox" />} />
-                        <Route path=":status" element={<MailList />} />
-                        <Route path=":status/:mailId" element={<MailDetails />} />
-                    </Route>
-                    
                     <Route path="/note" element={<NoteIndex />}>
-                        <Route path="/note" element={<NoteList />} > 
-                            <Route path="/note/add" element={<AddNote />} />   
+                        <Route path="/note" element={<NoteList />} >
+                            <Route path="/note/add" element={<AddNote />} />
                             <Route path="/note/edit/:noteId" element={<NoteEdit2 />} />
-                        </Route> 
+                        </Route>
                         <Route path="/note/soon" element={<UnderConstruction />} />
                         <Route path="/note/trash" element={<TrashNoteIndex />} />
                     </Route>
