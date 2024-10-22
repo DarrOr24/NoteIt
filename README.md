@@ -3,7 +3,7 @@
 <br> <img src="https://github.com/user-attachments/assets/4fff3359-0789-41b6-b496-92f8245851ac" alt="React Icon" height="50px"> <br>
 
 🔗 Project Links:
-➡ Live Project: [Link to project]
+➡ Live Project: [[Link to project]](https://darror24.github.io/NoteIt/)
 
 🎯 Objective:
 NoteIt is a clone of Google Keep, designed to replicate its core functionalities and user interface.
