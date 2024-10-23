@@ -19,13 +19,13 @@ export function App() {
         <Router>
             <section className="app">
                 <Routes>
-                    <Route path="/note" element={<NoteIndex />}>
-                        <Route path="/note" element={<NoteList />} >
-                            <Route path="/note/add" element={<AddNote />} />
-                            <Route path="/note/edit/:noteId" element={<NoteEdit2 />} />
+                    <Route path="/" element={<NoteIndex />}>
+                        <Route path="/" element={<NoteList />} >
+                            <Route path="/add" element={<AddNote />} />
+                            <Route path="/edit/:noteId" element={<NoteEdit2 />} />
                         </Route>
-                        <Route path="/note/soon" element={<UnderConstruction />} />
-                        <Route path="/note/trash" element={<TrashNoteIndex />} />
+                        <Route path="/soon" element={<UnderConstruction />} />
+                        <Route path="/trash" element={<TrashNoteIndex />} />
                     </Route>
 
                 </Routes>
