@@ -97,7 +97,7 @@ export function NoteIndex() {
         <header className="note-index-header">
 
             <img height="50" src="assets\img\keep-icon.png" alt="" />
-            <h1>Noted</h1>
+            <h1>NoteIt</h1>
             {showFilterandAdd && <NoteFilter filterBy={filterBy} onFilter={onSetFilterBy} />}
 
         </header>
