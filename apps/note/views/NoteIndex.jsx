@@ -1,9 +1,8 @@
 const { useState, useEffect } = React
-const { useSearchParams, Outlet } = ReactRouterDOM
+const { Outlet } = ReactRouterDOM
 
 import { AddNote } from "../cmps/AddNote.jsx"
 import { NoteFilter } from "../cmps/NoteFilter.jsx"
-import { NoteList } from "../cmps/NoteList.jsx"
 import { NoteSideMenu } from "../cmps/NoteSideMenu.jsx"
 import { noteService } from "../services/note.service.js"
 
