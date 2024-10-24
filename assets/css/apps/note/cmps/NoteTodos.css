@@ -9,12 +9,13 @@
 }
 
 .note-preview .to-do-list li {
-    justify-self: start;
     font-size: 0.8em;
     padding: 0;
     display: grid;
     grid-template-columns: 20px 2fr 1fr;
-    column-gap: 1em;
+    width: 100%;
+    column-gap: 0.5em;
+    justify-items: start;
 }
 
 .note-todos .to-do-list li span.done-at{
