@@ -19,7 +19,7 @@ export function NoteList() {
 
     return <section className="note-list">
         <section className="pinned-notes" >
-            {pinnedNotes() && <h2>PINNED</h2>}
+            {pinnedNotes() && <h2 className="category">PINNED</h2>}
             <ul>
                 {notes.map(note =>
                     <li key={note.id}   >
@@ -31,7 +31,7 @@ export function NoteList() {
         </section>
 
         <section className="upinned=notes">
-            {pinnedNotes() && unpinnedNotes() && <h2>OTHERS</h2>}
+            {pinnedNotes() && unpinnedNotes() && <h2 className="category">OTHERS</h2>}
             <ul>
                 {notes.map(note =>
                     <li key={note.id}   >

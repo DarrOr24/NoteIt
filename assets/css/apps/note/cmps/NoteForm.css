@@ -33,6 +33,7 @@
 
 .note-form form input:first-of-type{
     font-size: 18px;
+    width: 100%;
 }
 
 .note-form form textarea{

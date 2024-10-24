@@ -19,12 +19,6 @@
         grid-template-columns: 50px 60px auto; 
     } 
 
-    .note-list h2 {
-        padding-inline-start: 1em;
-        padding-block-start: 1em;
-    }
-
-
     .side-btn p{
         display: none;
     }

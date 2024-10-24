@@ -16,6 +16,12 @@
     color: gray;
 }
 
+.note-list h2.category {
+    margin-block-start: 1em;
+    font-weight: 600;
+    font-size: 0.6em;
+}
+
 .note-list ul li {
     break-inside: avoid;
     display: grid;
