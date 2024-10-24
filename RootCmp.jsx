@@ -22,7 +22,7 @@ export function App() {
                     <Route path="/" element={<NoteIndex />}>
                         <Route path="/" element={<NoteList />} >
                             <Route path="/add" element={<AddNote />} />
-                            <Route path="/edit/:noteId" element={<NoteEdit2 />} />
+                            <Route path="/:noteId" element={<NoteEdit2 />} />
                         </Route>
                         <Route path="/soon" element={<UnderConstruction />} />
                         <Route path="/trash" element={<TrashNoteIndex />} />
