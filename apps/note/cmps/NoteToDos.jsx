@@ -1,62 +1,99 @@
-const { useState} = React
+const { useState } = React
 
-export function NoteTodos({note}){
-    const {info} = note
-    const {todos} = info
+export function NoteTodos({ note, onUpdateTodos }) {
+    const { info } = note
+    const { todos } = info
 
-    
-    function isTodoChecked(key){
-        return (typeof(todos[key]) === 'number') ? `assets/img/checkbox-checked.svg` : `assets/img/checkbox-unchecked.svg`
+    const [todosState, setTodosState] = useState(todos);
 
-
+    function getDoneAtDate(key) {
+        if (typeof todosState[key] === 'number') {
+            return new Date(todosState[key]).toDateString()
+        } else {
+            return ''
+        }
     }
 
-    function getDoneAtDate(key){
-        if(typeof(todos[key]) === 'number') return new Date(todos[key]).toDateString(7)
-        
-        else ''
-         
+    // Handle checkbox change to update the doneAt value
+    function handleCheckboxChange(key) {
+        setTodosState(prevTodos => {
+            const updatedTodos = { ...prevTodos }
+            updatedTodos[key] = updatedTodos[key] ? null : Date.now()// Toggle between null (unchecked) and current timestamp (checked)
+
+            // Call parent function to update the todos outside this component
+            if (onUpdateTodos) {
+                onUpdateTodos(updatedTodos)
+            }
+
+            return updatedTodos
+        })
     }
-    
-    
-    return <section className="note-todos">
-                <h2>{note.info.title}</h2>
-                <ul className="to-do-list"> 
-                <div className="check-mark">DONE AT:<img height="10" src="assets\img\check-mark.svg" alt="" /></div>
-                     
-                   {(todos.todo1) && <li>
-                                        <span><img height="18" src={isTodoChecked('doneAt1')} alt="" /></span>
-                                        {todos.todo1}
-                                        <span className="done-at">{getDoneAtDate('doneAt1')}</span>  
-                                     </li> } 
 
-                   {(todos.todo2) && <li>
-                                        <span><img height="18" src={isTodoChecked('doneAt2')} alt="" /></span> 
-                                        {todos.todo2}
-                                        <span className="done-at">{getDoneAtDate('doneAt2')}</span>                                    
-                                     </li> } 
+    return (
+        <section className="note-todos">
+            <h2>{info.title}</h2>
+            <ul className="to-do-list">
 
-                   {(todos.todo3) && <li>
-                                        <span><img height="18" src={isTodoChecked('doneAt3')} alt="" /></span>  
-                                        {todos.todo3}
-                                        <span className="done-at">{getDoneAtDate('doneAt3')}</span>  
-                                     </li> } 
+                {(todosState.todo1) && (
+                    <li>
+                        <input
+                            type="checkbox"
+                            checked={!!todosState.doneAt1}
+                            onChange={() => handleCheckboxChange('doneAt1')}
+                        />
+                        {todosState.todo1}
+                        <span className="done-at">{getDoneAtDate('doneAt1')}</span>
+                    </li>
+                )}
 
-                   {(todos.todo4) && <li>
-                                        <span><img height="18" src={isTodoChecked('doneAt4')} alt="" /></span> 
-                                        {todos.todo4}
-                                        <span className="done-at">{getDoneAtDate('doneAt4')}</span>  
-                                         </li> }
+                {(todosState.todo2) && (
+                    <li>
+                        <input
+                            type="checkbox"
+                            checked={!!todosState.doneAt2}
+                            onChange={() => handleCheckboxChange('doneAt2')}
+                        />
+                        {todosState.todo2}
+                        <span className="done-at">{getDoneAtDate('doneAt2')}</span>
+                    </li>
+                )}
 
-                   {(todos.todo5) && <li>
-                                        <span><img height="18" src={isTodoChecked('doneAt5')} alt="" /></span> 
-                                        {todos.todo5}
-                                        <span className="done-at">{getDoneAtDate('doneAt5')}</span>  
-                                         </li> } 
-                    
-                    </ul>
+                {(todosState.todo3) && (
+                    <li>
+                        <input
+                            type="checkbox"
+                            checked={!!todosState.doneAt3}
+                            onChange={() => handleCheckboxChange('doneAt3')}
+                        />
+                        {todosState.todo3}
+                        <span className="done-at">{getDoneAtDate('doneAt3')}</span>
+                    </li>
+                )}
 
-                    
-            </section>
-                  
+                {(todosState.todo4) && (
+                    <li>
+                        <input
+                            type="checkbox"
+                            checked={!!todosState.doneAt4}
+                            onChange={() => handleCheckboxChange('doneAt4')}
+                        />
+                        {todosState.todo4}
+                        <span className="done-at">{getDoneAtDate('doneAt4')}</span>
+                    </li>
+                )}
+
+                {(todosState.todo5) && (
+                    <li>
+                        <input
+                            type="checkbox"
+                            checked={!!todosState.doneAt5}
+                            onChange={() => handleCheckboxChange('doneAt5')}
+                        />
+                        {todosState.todo5}
+                        <span className="done-at">{getDoneAtDate('doneAt5')}</span>
+                    </li>
+                )}
+            </ul>
+        </section>
+    )
 }

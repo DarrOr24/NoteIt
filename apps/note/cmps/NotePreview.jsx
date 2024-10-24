@@ -21,6 +21,8 @@ export function NotePreview({ note, onRemove, onEdit, onPinNote, onDuplicate }) 
     const { backgroundColor } = style
 
     function openEdit() {
+        console.log(note)
+        if (note.type === 'NoteTodo') return
         setOpenNote(true)
         navigate(`/${note.id}`)
     }
