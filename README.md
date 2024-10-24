@@ -9,3 +9,7 @@
 NoteIt is a clone of Google Keep, designed to replicate its core functionalities and user interface.
 
 💡 Note: For the best experience and to enjoy all the features, please access the application on a desktop device.
+
+<img src="https://github.com/user-attachments/assets/031f7d74-4211-4769-9d17-77a60e859f7e" alt="Image" width="400"/>
+
+
